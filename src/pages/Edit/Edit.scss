@@ -1,0 +1,85 @@
+@import '../../sass/utilities/variables';
+@import '../../sass//utilities/mixin';
+@import '../../sass/utilities/extend';
+
+.editContainer {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+    position: relative;
+
+    form {
+      @include wH(70%, 375px);
+
+      margin-top: 26px;
+      margin-left: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      color: $white;
+
+      input[type="text"] {
+        @include wH(60%, 40px);
+
+        background: transparent;
+        color: $white;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid $black;
+        padding-left: 10px;
+        border-radius: 0px;
+        font-size: 20px;
+        color: $black;
+      }
+
+      span {
+        font-size: 25px;
+        color: $black;
+      }
+
+      .editContainer_child {
+        width: 530px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .saveBtn {
+        @include wH(150px, 35px);
+
+        position: absolute;
+        bottom: -50px;
+        left: 35%;
+        border: 1px solid $white;
+        outline: none;
+        border-radius: 10px;
+        background: transparent;
+        font-size: 20px;
+        color: $black;
+        text-align: center;
+        text-decoration: none;
+        transition: background 2s ease;
+        box-shadow: 0px 0px 5px 1px $black;
+      }
+
+      .returnBtn{
+        @extend .saveBtn;
+
+        left: 25%;
+      }
+      .saveBtn:hover {
+        @extend .buttonHover;
+      }
+
+      .saveBtn:active {
+        transform: scale(0.9)
+      }
+    }
+  }
+
+
+
+
+

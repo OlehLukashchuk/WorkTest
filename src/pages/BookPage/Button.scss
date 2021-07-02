@@ -1,0 +1,21 @@
+.addBook {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: rebeccapurple;
+  margin-bottom: 20px;
+  cursor: pointer;
+  text-align: center;
+
+  a{
+    height:100%;
+    display: block;
+    text-decoration: none;
+    color: white;
+
+  }
+}
+
+.addBook:active {
+  transform: scale(0.9);
+}
