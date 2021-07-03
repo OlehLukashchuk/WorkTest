@@ -1,4 +1,6 @@
 @import '../../sass/utilities/variables';
+@import '../../sass/utilities/mixin';
+@import '../../sass/utilities/extend';
 
 .mainContainer {
   width: 100vw;
@@ -11,33 +13,66 @@
 
 .booksTable {
   width: 80%;
-  height: 400px;
+  height: 40rem;
 }
 
 
 .editBtn {
-  width: 50px;
-  height: 50px;
-  display: inline-block;
-  border: 1px solid transparent;
-  border-radius: 15px;
-  background-color: rebeccapurple;
-  cursor: pointer;
+  @extend .buttonStyle;
+  @include wH(5rem, 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  color: $black;
   text-decoration: none;
-  text-align: center;
-  color: $white;
 }
 
+.deleteBtn {
+  @extend .buttonStyle;
+  @include wH(6.5rem, 4rem);
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  color: $black;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  @extend .buttonHover;
+
+  a {
+    color: $white;
+  }
+}
+
+.deleteBtn:hover {
+  @extend .buttonHover;
+}
+
+.MuiDataGrid-root {
+  font-size: 1.4rem !important;
+}
+
+.MuiTypography-body2 {
+  font-size: 1.4rem !important;
+}
+
+.MuiSvgIcon-root {
+  width: 2rem !important;
+  height: 2rem !important;
+}
+
+
 .MuiDataGrid-root .MuiDataGrid-cellLeft a {
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
+  @include wH(3rem, 3rem);
+  margin-left: 1rem;
   outline: none;
   border: none;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: $white;
-  box-shadow: 0px 0px 3px 0px $black;
-  font-size: 13px;
+  box-shadow: 0 0 0.3rem 0 $black;
+  font-size: 1rem;
   text-transform: uppercase;
   text-align: center;
 }
@@ -99,4 +134,8 @@
 .MuiDataGrid-root .MuiDataGrid-columnHeader:focus,
 .MuiDataGrid-root .MuiDataGrid-cell:focus {
   outline: none !important;
+}
+
+.MuiDataGrid-root .MuiDataGrid-cell--textLeft {
+  padding-left: 18px;
 }

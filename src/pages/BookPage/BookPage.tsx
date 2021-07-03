@@ -1,4 +1,4 @@
-import React, { useState, useEffect, memo, useCallback } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { DataGrid } from "@material-ui/data-grid";
 import { NavLink } from "react-router-dom";
 
@@ -50,7 +50,7 @@ const columns = [
     renderCell: (props: any) => {
       return (
         <div>
-          <button className="editBtn" onClick={() => RemoveBook(props.id)}>
+          <button className="deleteBtn" onClick={() => RemoveBook(props.id)}>
             Delete
           </button>
         </div>
@@ -59,7 +59,7 @@ const columns = [
   },
 ];
 
-const RemoveBook = (id: number) => {
+let RemoveBook = (id: number) => {
   let toString: string = id.toString();
   db.collection("bookTest")
     .doc(toString)

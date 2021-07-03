@@ -1,18 +1,32 @@
-.addBook {
-  width: 100px;
-  padding: 10px;
-  border: 1px solid black;
-  background-color: rebeccapurple;
-  margin-bottom: 20px;
-  cursor: pointer;
-  text-align: center;
+@import '../../sass/utilities/variables';
+@import '../../sass/utilities/extend';
+@import '../../sass/utilities/mixin';
 
-  a{
-    height:100%;
+.addBook {
+  @extend .buttonStyle;
+  @include wH(11rem, 4rem);
+
+  border-radius: 1rem;
+  font-size: 2rem;
+  color: $black;
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 10px;
+
+  a {
+    height: 100%;
     display: block;
     text-decoration: none;
-    color: white;
+    color: $black;
+    padding: 1rem;
+    transition: color 0.5s ease;
+  }
+}
 
+.addBook:hover {
+  @extend .buttonHover;
+  a{
+    color:$white;
   }
 }
 

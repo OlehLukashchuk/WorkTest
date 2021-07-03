@@ -3,83 +3,81 @@
 @import '../../sass/utilities/extend';
 
 .editContainer {
-    display: flex;
-    padding: 50px;
-    justify-content: center;
+  @include wH(100vw, 100vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  form {
+    @include wH(45%, 37.5rem);
+
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: $white;
+    box-shadow: 0 0 1rem 0 $black;
+    padding: 2.5rem;
 
-    form {
-      @include wH(70%, 375px);
+    input[type="text"] {
+      @include wH(60%, 4rem);
 
-      margin-top: 26px;
-      margin-left: 50px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-between;
+      background: transparent;
       color: $white;
+      border: 0;
+      outline: none;
+      border-bottom: 0.1rem solid $black;
+      padding-left: 1rem;
+      border-radius: 0;
+      font-size: 2rem;
+      color: $black;
+    }
 
-      input[type="text"] {
-        @include wH(60%, 40px);
+    span {
+      font-size: 2.5rem;
+      color: $black;
+    }
 
-        background: transparent;
-        color: $white;
-        border-top: none;
-        border-left: none;
-        border-right: none;
-        border-bottom: 1px solid $black;
-        padding-left: 10px;
-        border-radius: 0px;
-        font-size: 20px;
-        color: $black;
-      }
+    .editContainer_child {
+      width: 53rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-      span {
-        font-size: 25px;
-        color: $black;
-      }
+    .saveBtn {
+      @include wH(15rem, 3.5rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: -10rem;
+      right: 30%;
+      border: 0.1rem solid $white;
+      outline: none;
+      border-radius: 1rem;
+      background: transparent;
+      font-size: 2rem;
+      color: $black;
+      text-decoration: none;
+      transition: background 2s ease;
+      box-shadow: 0 0 0.5rem 0.1rem $black;
+    }
 
-      .editContainer_child {
-        width: 530px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+    .returnBtn {
+      @extend .saveBtn;
 
-      .saveBtn {
-        @include wH(150px, 35px);
+      left: 30%;
+    }
 
-        position: absolute;
-        bottom: -50px;
-        left: 35%;
-        border: 1px solid $white;
-        outline: none;
-        border-radius: 10px;
-        background: transparent;
-        font-size: 20px;
-        color: $black;
-        text-align: center;
-        text-decoration: none;
-        transition: background 2s ease;
-        box-shadow: 0px 0px 5px 1px $black;
-      }
+    .saveBtn:hover {
+      @extend .buttonHover;
+    }
 
-      .returnBtn{
-        @extend .saveBtn;
-
-        left: 25%;
-      }
-      .saveBtn:hover {
-        @extend .buttonHover;
-      }
-
-      .saveBtn:active {
-        transform: scale(0.9)
-      }
+    .saveBtn:active {
+      transform: scale(0.9)
     }
   }
-
-
-
-
-
+}

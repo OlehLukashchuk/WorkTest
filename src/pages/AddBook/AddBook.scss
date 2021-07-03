@@ -3,48 +3,46 @@
 @import '../../sass/utilities/variables';
 
 .addContainer {
+  @include wH(100vw,100vh);
   display: flex;
-  padding: 50px;
   justify-content: center;
   align-items: center;
 
   form {
     @include wH(45%, 375px);
 
-    margin-top: 26px;
-    margin-left: 50px;
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     color: $white;
+    box-shadow: 0px 0px 10px 0px $black;
+    padding: 2.5rem;
 
     input[type="text"] {
-      @include wH(350px, 40px);
+      @include wH(35rem, 4rem);
 
       background: transparent;
       color: $white;
       border-top: none;
       border-left: none;
       border-right: none;
-      border-bottom: 1px solid gray;
-      padding-left: 10px;
-      border-radius: 0px;
-      font-family: 'Roboto-Medium';
-      font-size: 20px;
+      border-bottom: 0.1rem solid gray;
+      padding-left: 1rem;
+      border-radius: 0;
+      font-size: 2rem;
       color: $black;
       outline: none;
     }
 
     span {
-      font-size: 25px;
-      font-family: 'Roboto-Medium';
+      font-size: 2.5rem;
       color: $black;
     }
 
     .addContainer_child {
-      width: 530px;
+      width: 53rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -52,21 +50,23 @@
 
     .saveBtn {
       @extend .buttonStyle;
-      @include wH(80px, 35px);
+      @include wH(8rem, 3.5rem);
 
       position: absolute;
-      bottom: 0px;
-      left: 35%;
+      bottom: 10%;
+      right: 30%;
       border-radius: 10px;
       font-size: 20px;
       color: $black;
-      text-align: center;
       text-decoration: none;
     }
 
     .returnBtn {
       @extend .saveBtn;
-      left: 20%;
+      right: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .saveBtn:hover {
@@ -79,15 +79,14 @@
 
     .disabledBtnSave {
       @extend .buttonStyle;
-      @include wH(80px, 35px);
+      @include wH(8rem, 3.5rem);
 
       position: absolute;
-      bottom: 0px;
-      left: 45%;
-      border-radius: 10px;
-      font-size: 20px;
+      bottom: 10%;
+      right: 30%;
+      border-radius: 1rem;
+      font-size: 2rem;
       color: $black;
-      text-align: center;
       opacity: 0.5;
     }
   }
