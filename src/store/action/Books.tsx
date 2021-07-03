@@ -12,7 +12,12 @@ interface DataType {
 
 export default class BooksAction {
   static setBooksAction = (data: DataType) => {
-    return { type: NEW_BOOK, value: {} };
+    return { type: NEW_BOOK, value: {
+      bookTitle: "",
+      authorName: "",
+      category: "",
+      isbn: "",
+    }, };
   };
 
   static setBooks = (data: DataType) => {
